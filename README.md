@@ -23,4 +23,48 @@ Line plots are especially useful when we want to study patterns, trends, or chan
 
 10. A pie chart is a circular statistical graphic used to represent categorical data as slices of a circle. Each slice corresponds to a category, and the size of the slice is proportional to the value or percentage that the category contributes to the whole. The entire pie represents 100% of the data.
 
-11. In Matplotlib, subplots let you create multiple plots within the same figure. Instead of opening a new figure for each plot, you divide one figure into a grid (rows × columns) and place plots inside it.  
+11. In Matplotlib, subplots let you create multiple plots within the same figure. Instead of opening a new figure for each plot, you divide one figure into a grid (rows × columns) and place plots inside it.
+
+
+
+# Seaborn-Learnings  
+
+1. Matplotlib → Low-level, powerful, very customizable, but verbose and plain by default.
+Seaborn → High-level, built on Matplotlib, makes plots cleaner, easier, and adds built-in support for statistical visualizations.
+Key difference: Matplotlib gives control, Seaborn gives convenience + good defaults.
+They are complementary: Seaborn uses Matplotlib under the hood.
+
+2. Axes-level = one plot, you control details.
+Figure-level = whole figure with possibly many subplots, Seaborn controls layout.
+
+3. When we plot data, we usually map variables to the x-axis and y-axis.But real-world data often has more than two variables. To represent them in the same plot, Seaborn provides aesthetic mappings like hue, style, and size.These add extra dimensions of information without needing extra axes.
+hue maps a categorical or numerical variable to color.
+style maps a categorical variable to marker shapes (like circles, squares, triangles).
+size maps a numerical or categorical variable to marker size.
+
+4. If the legend appears inside the axes (top-right corner by default) → Axes-level function.If the legend appears outside the axes, usually on the right side → Figure-level function.
+
+5. A Facet plot in Seaborn is created using figure-level functions (like relplot, catplot, displot) and allows splitting data into multiple subplots. The row and col parameters let you arrange plots across rows and columns based on categorical variables. This functionality is only available in figure-level functions, not axes-level ones.
+
+6. rugplot() is an axes-level function in Seaborn.It draws small vertical (or horizontal) ticks along the axis to represent individual data points.Each tick = one observation → so it shows the distribution of raw data in a very compact form.It is often combined with histograms or KDE plots to give context about actual data points.
+
+7. point of confusion:
+Histplot → counts or density of raw values (distribution).
+KDEplot → smooth probability distribution.
+Barplot → aggregated statistic (mean by default, can be changed).
+
+8. A heatmap visualizes 2D data using colors instead of numbers, making it easy to detect patterns, high/low values, and relationships (like correlations).  
+
+9. cluster map is similar to heatmap but internally performs clustering on data dendograms, A dendrogram is a diagram that shows the hierarchical merging of data points into clusters, with branch height representing the distance (similarity) between them. It’s widely used in hierarchical clustering to understand data structure.
+
+10. A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile [Q1], median, third quartile [Q3] and “maximum”). It can tell you about your outliers and what their values are. Boxplots can also tell you if your data is symmetrical, how tightly your data is grouped and if and how your data is skewed.
+
+11. Regression plots:
+Use regplot for simple regression on one plot.
+Use lmplot when you want regression + faceting across groups.
+Use residplot to evaluate how well your regression fits by inspecting residuals.
+
+12. The Seaborn pairplot() is a powerful figure-level function used for exploratory data analysis (EDA). It automatically creates a grid of plots that show the pairwise relationships between multiple numerical variables in a dataset. On the diagonal, it usually shows univariate distributions (like histograms or KDE plots), while the off-diagonal shows scatter plots between every pair of variables.
+
+
+
