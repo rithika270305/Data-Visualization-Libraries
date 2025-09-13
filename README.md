@@ -66,5 +66,7 @@ Use residplot to evaluate how well your regression fits by inspecting residuals.
 
 12. The Seaborn pairplot() is a powerful figure-level function used for exploratory data analysis (EDA). It automatically creates a grid of plots that show the pairwise relationships between multiple numerical variables in a dataset. On the diagonal, it usually shows univariate distributions (like histograms or KDE plots), while the off-diagonal shows scatter plots between every pair of variables.
 
+13. The Seaborn jointplot() is a figure-level function that combines a bivariate plot (like scatter, hex, or regression) with the univariate distributions of each variable on the top and right axes. 
+
 
 
